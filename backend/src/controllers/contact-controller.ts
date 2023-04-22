@@ -11,19 +11,18 @@ const getContacts = async (req: Request, res: Response) => {
 };
 
 const getContact = async (req: Request, res: Response) => {
-  const contact = await Contact.findById(req.params.id);
-  if (contact) {
+  try {
+    const contact = await Contact.findById(req.params.id);
     res.json(contact);
-  } else {
+  } catch (err) {
     res.status(404).send("Contact not found");
   }
 };
 
 const createContact = async (req: Request, res: Response) => {
-  console.log("xwedcewfdewfd");
   const { firstname, lastname, status } = req.body;
-  const contact = new Contact({ firstname, lastname, status });
   try {
+    const contact = new Contact({ firstname, lastname, status });
     const savedContact = await contact.save();
     res.json(savedContact);
   } catch (err) {
