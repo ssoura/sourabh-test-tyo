@@ -18,10 +18,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/contact", contactRouter);
+app.use("/contacts", contactRouter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome to Contacts API!");
+app.use("*", (req, res) => {
+  res.send("Welcome to API!");
 });
 
 // Contact routes
