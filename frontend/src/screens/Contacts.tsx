@@ -32,7 +32,7 @@ const Contacts = () => {
       <div className="flex justify-between">
         <h1 className="font-black text-4xl text-red-400">Contacts</h1>
         <Link
-          className={`text-white text-4xl w-28 text-center rounded p-1 m-1 bg-red-400 mt-2 hover:text-red-300`}
+          className={`text-white text-2xl w-28 text-center rounded p-1 m-2 bg-blue-500 mt-2 hover:text-blue-300`}
           to="/new"
         >
           New
