@@ -6,17 +6,26 @@ import { fetchContacts } from "../store/thunks/contactsThunks";
 import { AppDispatch, RootState } from "../store";
 
 import Contact from "../components/contact/ContactCard";
+import { BarLoader } from "react-spinners";
 
 const Contacts = () => {
   const dispatch = useDispatch<AppDispatch>();
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
   //  TODO : Add loading state to UI
-  // const status = useSelector((state: RootState) => state.contacts.status);
+  const status = useSelector((state: RootState) => state.contacts.status);
   // const error = useSelector((state: RootState) => state.contacts.error);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
+  if (status === "loading") {
+    return (
+      <div className="flex mx-auto justify-center">
+        <BarLoader color="#ff0000" />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -29,9 +38,9 @@ const Contacts = () => {
           New
         </Link>
       </div>
-      <div className="grid mx-auto justify-center sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 mx-auto justify-center sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {contacts &&
-          contacts.map((contact: ContactType) => (
+          contacts?.map((contact: ContactType) => (
             <Contact key={contact._id} contact={contact} />
           ))}
       </div>
