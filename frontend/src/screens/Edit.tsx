@@ -28,6 +28,7 @@ const Edit = () => {
       setLoading(!loading);
     };
     getContactAPI();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
