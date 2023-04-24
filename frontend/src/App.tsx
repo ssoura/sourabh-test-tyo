@@ -4,12 +4,7 @@ import Contacts from "./screens/Contacts";
 import Layout from "./components/Layout";
 import New from "./screens/New";
 import Edit from "./screens/Edit";
-
-// TODO : /charts_and_maps - charts and maps feature
-
-function Test(): JSX.Element {
-  return <div>Charts and Maps</div>;
-}
+import ChartsAndMaps from "./screens/ChartsAndMaps";
 
 function App() {
   return (
@@ -19,7 +14,7 @@ function App() {
           <Route index element={<Contacts />} />
           <Route path="new" element={<New />} />
           <Route path="edit/:id" element={<Edit />} />
-          <Route path="charts_and_maps" element={<Test />} />
+          <Route path="charts_and_maps" element={<ChartsAndMaps />} />
         </Route>
       </Routes>
     </BrowserRouter>

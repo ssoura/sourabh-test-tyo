@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 
-import { deleteContact } from "../store/thunks/contactsThunks";
-import { AppDispatch } from "../store";
+import { deleteContact } from "../../store/thunks/contactsThunks";
+import { AppDispatch } from "../../store";
 
 const Contact = ({ contact }: { contact: ContactType }) => {
   const dispatch = useDispatch<AppDispatch>();

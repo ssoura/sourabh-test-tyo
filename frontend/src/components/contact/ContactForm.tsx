@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDispatch } from "react-redux";
 
-import { AppDispatch, createContact, editContact } from "../store";
+import { AppDispatch, createContact, editContact } from "../../store";
 import Alert from "./Alert";
 
 export default function ContactForm({ contact, loading }: ContactFormProps) {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/contact/ContactForm";
 
 const Edit = () => {
   const [contact, setContact] = useState<ContactType>();

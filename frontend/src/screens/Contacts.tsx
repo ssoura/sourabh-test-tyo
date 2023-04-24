@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { fetchContacts } from "../store/thunks/contactsThunks";
 import { AppDispatch, RootState } from "../store";
 
-import Contact from "../components/ContactCard";
+import Contact from "../components/contact/ContactCard";
 
 const Contacts = () => {
   const dispatch = useDispatch<AppDispatch>();
