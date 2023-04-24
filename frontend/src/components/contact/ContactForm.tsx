@@ -81,15 +81,20 @@ export default function ContactForm({ contact, loading }: ContactFormProps) {
           />
           {errors.lastname && <Alert>{errors.lastname.message}</Alert>}
         </div>
+
         <div className="mb-4">
           <label htmlFor="status" className="text-slate-800 ">
             Status:
           </label>
-          <input
-            type="text"
-            className="mt-2 block w-full p-3 bg-slate-50 rounded-md"
-            {...register("status")}
-          />
+          <div>
+            <input type="radio" value="active" {...register("status")} />
+            <label className="pl-2">Active</label>
+          </div>
+
+          <div>
+            <input type="radio" value="inactive" {...register("status")} />
+            <label className="pl-2">Inactive</label>
+          </div>
           {errors.status && <Alert>{errors.status.message}</Alert>}
         </div>
 
