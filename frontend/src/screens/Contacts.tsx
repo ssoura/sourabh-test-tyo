@@ -35,31 +35,25 @@ const Contacts = () => {
     );
   }
 
-  if (status === "succeeded") {
-    return (
-      <>
-        <div className="flex justify-between">
-          <h1 className="font-black text-4xl text-red-400">Contacts</h1>
-          <Link
-            className={`text-white text-2xl w-28 text-center rounded p-1 m-2 bg-blue-500 mt-2 hover:text-blue-300`}
-            to="/new"
-          >
-            New
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 mx-auto justify-center sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {contacts &&
-            contacts?.map((contact: ContactType) => (
-              <Contact key={contact._id} contact={contact} />
-            ))}
-        </div>
-      </>
-    );
-  } else {
-    <div className="flex justify-between mx-auto">
-      <h1>Error</h1>
-    </div>;
-  }
+  return (
+    <>
+      <div className="flex justify-between">
+        <h1 className="font-black text-4xl text-red-400">Contacts</h1>
+        <Link
+          className={`text-white text-2xl w-28 text-center rounded p-1 m-2 bg-blue-500 mt-2 hover:text-blue-300`}
+          to="/new"
+        >
+          New
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 mx-auto justify-center sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {contacts &&
+          contacts?.map((contact: ContactType) => (
+            <Contact key={contact._id} contact={contact} />
+          ))}
+      </div>
+    </>
+  );
 };
 
 export default Contacts;
